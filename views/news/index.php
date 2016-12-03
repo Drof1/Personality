@@ -10,7 +10,7 @@ print_r(__DIR__);
     <title>PERSONALITY</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
-    <link href="Personality/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="template/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@ print_r(__DIR__);
 		</div>
 		<div id="banner">
                     <div class="content">
-                    <img src="Personality/template/images/img02.jpg" />
+                    <img src="template/images/img02.jpg" />
 		</div>
             </div>
 	</div>
