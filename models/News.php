@@ -29,7 +29,7 @@ class News {
         $newsList = array();
 //SELECT news.id, title, date, short_content, CONCAT(user.name,' ',user.surname) AS 'author_name' FROM `news`, `user` WHERE news.author_id = user.id ORDER BY date DESC LIMIT 10        
         $result = $db->query('SELECT news.id, title, date, short_content,preview, '
-                ."CONCAT(user.name,' ',user.surname) AS 'author_name' "
+                ."user.name AS 'author_name' "
                 .'FROM `news`, `user` '
                 .'WHERE news.author_id = user.id '
                 .'ORDER BY date DESC '

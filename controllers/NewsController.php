@@ -1,12 +1,11 @@
 <?php
-include_once ROOT.'/models/News.php';
 class NewsController
 {
     public function actionIndex($page) {
         $newsList = array();
         $newsList = News::getNewsList($page);
         
-        require_once ROOT . '/views/news/index.php';
+        require_once (ROOT . '/views/startpage.php');
         
         return true;
     }

@@ -21,7 +21,7 @@ class Router {
 
     public function run() {
         // Получить строку запроса
-        echo $uri = $this->getURI();
+        $uri = $this->getURI();
         // Проверить наличие такого запроса в routes.php
         foreach ($this->routes as $uriPattern => $path) {
             // Сравниваем $uriPattern и $uri
