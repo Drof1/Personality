@@ -27,9 +27,7 @@ class News {
         $page = intval($page);
         $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
         $newsList = array();
-        $result = $db->query('SELECT news.id, title, date, short_content, '
-                ."surrogates.name AS 'author_name' 'FROM `news`, `surrogates` "
-                .'WHERE news.author_id = surrogates.id ORDER BY date DESC ');
+        $result = $db->query("SELECT n.id, n.title, n.date, n.short_content, s.name AS 'author_name' FROM news n INNER JOIN surrogates s ON n.author_id = s.id ORDER BY date DESC");
                 //.'LIMIT ' . self::SHOW_BY_DEFAULT
                 //.' OFFSET ' . $offset);
         $i = 0;

@@ -41,7 +41,6 @@ class CabinetController
     {
         // Получаем идентификатор пользователя из сессии
         $userId = User::checkLogged();
-        echo $userId. '<br/>';
         // Получаем информацию о пользователе из БД
         $user = User::getUserById($userId);
         // Переменные для формы
