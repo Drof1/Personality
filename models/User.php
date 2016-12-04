@@ -26,28 +26,6 @@ class User
         return $result->execute();
     }
     /**
-     * Редактирование данных пользователя
-     * @param integer $id <p>id пользователя</p>
-     * @param string $name <p>Имя</p>
-     * @param string $password <p>Пароль</p>
-     * @return boolean <p>Результат выполнения метода</p>
-     */
-    public static function edit($id, $name, $password)
-    {
-        // Соединение с БД
-        $db = Db::getConnection();
-        // Текст запроса к БД
-        $sql = "UPDATE user 
-            SET name = :name, password = :password 
-            WHERE id = :id";
-        // Получение и возврат результатов. Используется подготовленный запрос
-        $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
-        $result->bindParam(':name', $name, PDO::PARAM_STR);
-        $result->bindParam(':password', $password, PDO::PARAM_STR);
-        return $result->execute();
-    }
-    /**
      * Проверяем существует ли пользователь с заданными $email и $password
      * @param string $email <p>E-mail</p>
      * @param string $password <p>Пароль</p>
@@ -92,7 +70,8 @@ class User
         if (isset($_SESSION['user'])) {
             return $_SESSION['user'];
         }
-        header("Location: /user/login");
+        else
+            header("Location: /Personality/user/login");
     }
     /**
      * Проверяет является ли пользователь гостем
@@ -118,19 +97,7 @@ class User
         return false;
     }
     /**
-     * Проверяет телефон: не меньше, чем 10 символов
-     * @param string $phone <p>Телефон</p>
-     * @return boolean <p>Результат выполнения метода</p>
-     */
-    public static function checkPhone($phone)
-    {
-        if (strlen($phone) >= 10) {
-            return true;
-        }
-        return false;
-    }
-    /**
-     * Проверяет имя: не меньше, чем 6 символов
+     * Проверяет пароль: не меньше, чем 6 символов
      * @param string $password <p>Пароль</p>
      * @return boolean <p>Результат выполнения метода</p>
      */

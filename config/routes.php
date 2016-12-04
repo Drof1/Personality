@@ -5,6 +5,7 @@ return array(
     'news/page-([0-9]+)' => 'news/index/$1', //actionNews in NewsController
     'user/register' => 'user/register',
     'user/login' => 'user/login',
+    'user/logout' => 'user/logout',
     'cabinet' => 'cabinet/index',
 //    'news' => 'news/index', // actionIndex in NewsController
 //    'news/([0-9]+)' => 'news/view',

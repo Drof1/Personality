@@ -25,16 +25,16 @@ class UserController
             $errors = false;
             // Валидация полей
             if (!User::checkName($name)) {
-                $errors[] = 'Имя не должно быть короче 2-х символов';
+                $errors[] = 'The name must be at least 2 characters!';
             }
             if (!User::checkEmail($email)) {
-                $errors[] = 'Неправильный email';
+                $errors[] = 'Wrong e-mail address!';
             }
             if (!User::checkPassword($password)) {
-                $errors[] = 'Пароль не должен быть короче 6-ти символов';
+                $errors[] = 'The password should be at least 6 characters!';
             }
             if (User::checkEmailExists($email)) {
-                $errors[] = 'Такой email уже используется';
+                $errors[] = 'This email is already in use!';
             }
             
             if ($errors == false) {
@@ -67,21 +67,21 @@ class UserController
             $errors = false;
             // Валидация полей
             if (!User::checkEmail($email)) {
-                $errors[] = 'Неправильный email';
+                $errors[] = 'Wrong e-mail address!';
             }
             if (!User::checkPassword($password)) {
-                $errors[] = 'Пароль не должен быть короче 6-ти символов';
+                $errors[] = 'The password should be at least 6 characters!';
             }
             // Проверяем существует ли пользователь
             $userId = User::checkUserData($email, $password);
             if ($userId == false) {
                 // Если данные неправильные - показываем ошибку
-                $errors[] = 'Неправильные данные для входа на сайт';
+                $errors[] = 'Incorrect data to access the site!';
             } else {
                 // Если данные правильные, запоминаем пользователя (сессия)
                 User::auth($userId);
                 // Перенаправляем пользователя в закрытую часть - кабинет 
-                header("Location: /user/cabinet");
+                header("Location: /Personality/cabinet");
             }
         }
         // Подключаем вид
@@ -93,13 +93,10 @@ class UserController
      */
     public function actionLogout()
     {
-        // Стартуем сессию
-        session_start();
-        
         // Удаляем информацию о пользователе из сессии
         unset($_SESSION["user"]);
         
         // Перенаправляем пользователя на главную страницу
-        header("Location: /");
+        header("Location: /Personality/news/page-1");
     }
 }

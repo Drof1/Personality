@@ -1,20 +1,23 @@
 <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
-                    <h1><a href="#">personality</a></h1>
+                    <h1><a href="/Personality/news/page-1">Personality</a></h1>
                 </div>
                 <div id="menu">
                     <ul>
-                        <li class="current_page_item"><a href="#">Log in</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Exit</a></li>
+                        <?php if(User::isGuest()): ?>
+                        <li class="current_page_item"><a href="/Personality/user/login/">Log in</a></li>
+                        <li><a href="/Personality/user/register">Sign up</a></li>
+                        <?php else: ?>
+                        <li class="current_page_item"><a href="/Personality/cabinet/">Post</a></li>
+                        <li><a href="/Personality/user/logout">Exit</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
             <div id="banner">
                 <div class="content">
-                    <img src="template/images/img02.jpg" />
+                    <img src="<?=TAMPLATE_FOLDER?>images/img02.jpg" />
                 </div>
             </div>
 	</div>

@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 session_start();
 //2. Подключение файлов системы
+define('TAMPLATE_FOLDER' , '/Personality/template/');
 define('ROOT', dirname(__FILE__));
 require_once (ROOT . '\components\Autoload.php');
 //4. Вызов Router

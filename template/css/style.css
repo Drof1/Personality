@@ -137,7 +137,7 @@ a:hover {
 #menu a {
 	display: block;
 	margin-right: 1px;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 20px;
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
@@ -145,17 +145,21 @@ a:hover {
 	font-size: 14px;
 	font-weight: 300;
 	color: #585858;
+        border-radius: 5px;
 	border: none;
 }
 
-#menu a:hover, #menu .current_page_item a {
-	text-decoration: none;
-	color: #FFFFFF;
+#menu a {
+        padding: 8px 18px;
+        background: #000000;
+        border: 2px solid #585858;
 }
 
-#menu .current_page_item a {
+#menu a:hover {
+        padding: 10px 20px;
+        border: none;
+        color: #FFFFFF;
 	background: #EE5058;
-	border-radius: 5px;
 }
 
 /* Page */
@@ -398,4 +402,59 @@ ul.style1 .first {
 	color: #FFFFFF;
 	text-align: center;
 	text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px #000 !important; /* Цвет фона */
+    -webkit-text-fill-color: #5B5B5B !important; /* цвет текста */
+    color: #5B5B5B !important; /* цвет текста */
+}
+
+input[type=email], input[type=password], input[type=text] {
+    background: #000000;
+    width: 50%;
+    padding: 9px 20px;
+    margin: 8px 12.5%;
+    box-sizing: border-box;
+    border-color: #716c6c;
+    border-radius: 5px;
+    
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    color: #CFCFCF;
+}
+
+input[type=submit] {
+    display: block;
+    margin: 10px 0px 20px 12.5%;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #FFFFFF;
+    border: none;
+    
+    background: #EE5058;
+    border-radius: 5px;
+}
+
+textarea {
+    background: #000000;
+    width: 50%;
+    padding: 9px 20px;
+    margin: 8px 12.5%;
+    box-sizing: border-box;
+    border-color: #716c6c;
+    border-radius: 5px;
+    
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    color: #CFCFCF;
 }
