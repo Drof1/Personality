@@ -13,8 +13,20 @@
         <div id="page">
             <div class="post">
                 <div class="signup-form"><!--sign up form-->
-                    <h2 class="title">Enter the site</h2>
+                    <h2 class="title">Enter the news</h2>
                     <form action="#" method="post">
+                        
+                        <p>Who publishes</p>
+                        <select name="surrogates_id">
+                            <?php if (is_array($nameList)): ?>
+                                <?php foreach ($nameList as $category): ?>
+                                    <option value="<?php echo $category['id']; ?>">
+                                        <?php echo $category['name']; ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
+                        
                         <input type="text" name="title" placeholder="Title of post" value="<?= $title ?>" />
                         <textarea name="short_content" placeholder="A summary of the news" value="<?= $short_content ?>"></textarea>
                         <textarea name="content" placeholder="News content" value="<?= $content ?>"></textarea>

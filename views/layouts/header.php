@@ -6,10 +6,11 @@
                 <div id="menu">
                     <ul>
                         <?php if(User::isGuest()): ?>
-                        <li class="current_page_item"><a href="/Personality/user/login/">Log in</a></li>
+                        <li><a href="/Personality/user/login/">Log in</a></li>
                         <li><a href="/Personality/user/register">Sign up</a></li>
                         <?php else: ?>
-                        <li class="current_page_item"><a href="/Personality/cabinet/">Post</a></li>
+                        <li><a href="/Personality/cabinet/heteronym">Add nick</a></li>
+                        <li><a href="/Personality/cabinet/post">Post</a></li>
                         <li><a href="/Personality/user/logout">Exit</a></li>
                         <?php endif; ?>
                     </ul>

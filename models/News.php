@@ -27,15 +27,11 @@ class News {
         $page = intval($page);
         $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
         $newsList = array();
-//SELECT news.id, title, date, short_content, CONCAT(user.name,' ',user.surname) AS 'author_name' FROM `news`, `user` WHERE news.author_id = user.id ORDER BY date DESC LIMIT 10        
         $result = $db->query('SELECT news.id, title, date, short_content, '
-                ."user.name AS 'author_name' "
-                .'FROM `news`, `user` '
-                .'WHERE news.author_id = user.id '
-                .'ORDER BY date DESC '
-                .'LIMIT ' . self::SHOW_BY_DEFAULT
-                .' OFFSET ' . $offset);
-        
+                ."surrogates.name AS 'author_name' 'FROM `news`, `surrogates` "
+                .'WHERE news.author_id = surrogates.id ORDER BY date DESC ');
+                //.'LIMIT ' . self::SHOW_BY_DEFAULT
+                //.' OFFSET ' . $offset);
         $i = 0;
         while ($row = $result->fetch()) {
             $newsList[$i]['id'] = $row['id'];

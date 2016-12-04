@@ -81,7 +81,7 @@ class UserController
                 // Если данные правильные, запоминаем пользователя (сессия)
                 User::auth($userId);
                 // Перенаправляем пользователя в закрытую часть - кабинет 
-                header("Location: /Personality/cabinet");
+                header("Location: /Personality/cabinet/post");
             }
         }
         // Подключаем вид
